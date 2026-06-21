@@ -11,19 +11,25 @@
       },
       "options": {
         "baseURL": "https://routellm.abacus.ai/v1/",
-        "apiKey": "{file:~/.abacus-ai/api-key}"
+        "apiKey": "{file:~/.abacus-ai/api-key}",
+        "compatibility": "strict",
+        "toolChoice": "auto",
+        "headers": {
+          "HTTP-Referer": "opencode",
+          "X-Title": "OpenCode"
+        }
       }
     }
   },
   "mcp": {
     "jcodemunch": {
       "type": "remote",
-      "url": "http://localhost:8901/mcp",
+      "url": "http://localhost:8901/sse",
       "enabled": true
     },
     "jdocmunch": {
       "type": "remote",
-      "url": "http://localhost:8901/mcp",
+      "url": "http://localhost:8901/sse",
       "enabled": true
     }
   },
