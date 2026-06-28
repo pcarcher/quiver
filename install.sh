@@ -57,7 +57,9 @@ done
 
 if gum confirm "Add zsh configuration to .zshrc?"; then
   log_info "Adding zsh configuration..."
-  echo "source $HOME/.config/zsh/config.zsh" >>~/.zshrc
+  ln -sfn "$CONFIGS_DIR/zsh/config.zsh" "$HOME/.zsh_aliases"
+  grep -qxF '[[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases || true' ~/.zshrc ||
+    echo '[[ -f ~/.zsh_aliases ]] && source ~/.zsh_aliases || true' >>~/.zshrc
 fi
 
 print_banner "All done, Archer! Enjoy your setup."
